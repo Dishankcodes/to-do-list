@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    body {
+        background-color: #F7F7F7;
+        color: #2d4a29;
+    }
+
+    #q {
+        background-color: #C6E2B5;
+        color: #2d4a29;
+    }
+
+    .c {
+        background-color: #FFFFFF;
+        margin-top: 20px;
+    }
+
+
+    #i {
+        /*  background-color: #4CAF50; */
+        padding: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .b {
+        color: #2d4a29;
+        font-size: 25px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        margin: none;
+        background-color: #4CAF50;
+        padding: 5px;
+        width: 99%;
+    }
+
+    /* 
+.nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: none;
+}
+*/
+    .nav-link:hover {
+        color: #4CAF50;
+        text-decoration: underline;
+    }
+
+    nav a {
+        font-weight: bold;
+        text-align: center;
+        background-color: #C6E2B5;
+        border: 8px solid #C6E2B5;
+        border-radius: 5px;
+        margin-top: 15px;
+        text-decoration: none;
+        color: #2d4a29;
+
+        margin: 10px;
+    }
+
+    #a {
+        display: flex;
+        padding: 20px;
+        gap: 500px;
+        /*  background-color: #C6E2B5; */
+        margin-top: 10px;
+        background-color: #4CAF50;
+
+    }
+
+    #m {
+        background-color: #C6E2B5;
+        margin: none;
+        /*  padding-left: 605px;
+        padding-right: 605px; */
+
+    }
+
+    #w {
+        background-color: #C6E2B5;
+        border: 10px solid #C6E2B5;
+        border-radius: 8px;
+        margin: 15px;
+    }
+
+    #r {
+        text-align: center;
+        height: 30px;
+        width: 80px;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 20px;
+        border: none;
+        background-color: #4CAF50;
+        padding-top: 8px;
+        color: white;
+    }
+
+    #e {
+        border-radius: 8px;
+        margin: 15px;
+    }
+
+    form {
+        background: #FFFFFF;
+        padding: 20px;
+        margin: auto;
+        max-width: 400px;
+        border-radius: 8px;
+        border: 2px solid #C6E2B5;
+    }
+
+    footer {
+        background-color: #4CAF50;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5%;
+        color: white;
+    }
+
+    ::placeholder {
+        text-align: center;
+        font-weight: bold;
+        color: #2d4a29;
+    }
+
+    input {
+        padding: 10px;
+        width: 80%;
+        border: 1px solid #4CAF50;
+        border-radius: 5px;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 7px 10px;
+    }
+</style>
+
+<body style="background-image: url('backg.png'); background-repeat: no-repeat;" onload="welcomemsg()">
+
+    <header>
+        <div id="i">
+            <div class="b">
+                <h1> GetItDone </h1>
+            </div>
+            <div class="a" style="width: 100%; text-align: center;">
+                <div id="m">
+                    <nav>
+
+                        <a href="homepage.html" class="nav-link" style="margin-left: none;">Home</a>
+                        <a href="task.html" class="nav-link" style="margin-left: 10px;">Tasks</a>
+                        <a href="rateus.html" class="nav-link" style="margin-left: 10px;">FeedBack</a>
+
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <div>
+        <div>
+            <h1>Stay Organized, Get More Done</h1>
+        </div>
+        <div id="w">
+            Welcome to GetItDone, your ultimate task manager designed to keep you on track and boost your
+            productivity. Whether you're managing work projects, daily chores, or long-term goals, we've got you
+            covered.
+            <ul>
+                <li> Easily create and prioritize tasks.</li>
+                <li> Stay focused with a simple, clutter-free interface.</li>
+            </ul>
+        </div>
+    </div>
+    <marquee behavior="scroll" direction="right">
+        Stay productive! Keep track of your tasks and achieve your goals.
+    </marquee>
+    <div id="e">
+        <center>
+            <form>
+                <label for="name">Name:</label><br><br>
+                <input type="text" name="todolist" placeholder="Enter your Name" id="name" required><br><br>
+
+                <label for="email">Email:</label><br><br>
+                <input type="email" name="todolist" placeholder="Enter your email" required><br><br>
+
+                <label for="password">Password:</label><br><br>
+                <input type="password" name="todolist" placeholder="Enter password" id="pass" required><br><br>
+                <button type="button" onclick="abc()">Login</button>
+            </form>
+        </center>
+    </div>
+    <footer>
+        <p> &copy; 2025 To-Do List App. All Rights Reserved.</p>
+    </footer>
+
+</body>
+<script>
+    function welcomemsg(){
+        alert('Welcome to our webpage!\n"The best way to get something done is to begin"');
+    }
+    $("nav a").mouseover(function () {
+        $(this).css("color", "green");
+    }).mouseout(function () {
+        $(this).css("background-color", "#C6E2B5","border","8px solid #C6E2B5");
+    });
+    function abc() {
+        let a = document.getElementById("name").value;
+        let b = document.getElementById("pass").value;
+        let c = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$&*!]).{7,10}/;
+
+        if (!c.test(b)) {
+            alert("Please include at least one lowercase letter, one uppercase letter, one number, and one special character (@#$&*!). Password must be at least 7 characters long.");
+        } else {
+            alert("Login Successful");
+            window.location.href = "task.html"
+        }
+    }
+
+</script>
+</script>
+
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <title>To-Do List App</title>
+    <style>
+        body {
+            background-color: #F7F7F7;
+            color: #2d4a29;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #i {
+            /*  background-color: #4CAF50; 
+          
+            display: flex; */
+            flex-direction: column;
+            align-items: center;
+
+        }
+        .b {
+            color: #2d4a29;
+            font-size: 25px;
+            font-weight: bold;
+            background-color: #4CAF50;
+            width: 98%;
+           
+        }
+
+
+        .nav-link:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        nav a {
+            font-weight: bold;
+            text-align: center;
+            background-color: #C6E2B5;
+            border: 8px solid #C6E2B5;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #2d4a29;
+
+            margin: 10px;
+        }
+
+        #a {
+            display: flex;
+            padding: 5px;
+            gap: 480px;
+            /*  background-color: #C6E2B5; */
+            margin-top: 10px;
+            background-color: #4CAF50;
+
+        }
+
+        #m {
+            background-color: #C6E2B5;
+            margin: none;
+            /*  padding-left: 605px;
+        padding-right: 605px; */
+
+        }
+
+        .c {
+            background-color: whitesmoke;
+            margin-bottom: 20px;
+        }
+
+
+       
+/*
+        #t {
+            text-align: right;
+            /*   height: 30px; */
+  /*          padding: 10px 13px 10px 13px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            margin-top: 5px;
+            background: rgb(40, 167, 69);
+            color: white;
+            cursor: pointer;
+        }*/
+
+        .container {
+            max-width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #C6E2B5;
+            margin: 20px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 8px;
+            border: 1px solid rgb(204, 204, 204);
+            border-radius: 5px;
+        }
+
+        #bottn {
+            padding: 8px 12px;
+            border: none;
+            background:rgb(52, 190, 52);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+
+        #btn {
+            padding: 8px 12px;
+            border: none;
+            background: rgb(52, 190, 52);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 14px;
+        }
+
+        button:hover {
+            background: rgb(165, 255, 184);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .task-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid rgb(221, 221, 221);
+            font-size: 18px;
+        }
+
+        .task-item.completed span {
+            text-decoration: line-through;
+            color: gray;
+        }
+
+        .complete-btn {
+            background: #007bff;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            font-weight: bold;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            margin-top: 20px;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            color: white;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            
+        }
+        th { background: rgb(40, 167, 69); 
+            color: white;
+        
+        }
+    
+    </style>
+</head>
+
+<body style="font-family: 'Times New Roman', Times, serif; background-image: url(backg.png); background-size: cover;">
+
+    <header>
+        <div id="i">
+            <div class="b" style="  margin: 10px 20px 20px 20px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; ">
+                    <h1 style="padding: 5px; ">GetItDone</h1>
+                    <button onclick="location.href='homepage.html'" style="background-color: #4CAF50; color: white; border: 2px solid #4CAF50; border-radius: 5px; padding: 8px 15px; cursor: pointer; margin-right: 20px;">Login</button>
+                </div>
+            </div>
+            <div class="a" style="width: 100%; text-align: center;">
+                <div id="m">
+                    <nav>
+                        <a href="homepage.html" class="nav-link">Home</a>
+                        <a href="task.html" class="nav-link">Tasks</a>
+                        <a href="rateus.html" class="nav-link">Feedback</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <h2>To-Do List</h2>
+        <form id="addTaskForm">
+            <input type="text" id="taskInput" placeholder="Enter a task">
+            <button type="button" onclick="addTask()" id="bottn">Add</button> <br><br>
+            <input type="date" id="taskDate"> <br> 
+            </form>
+       
+        <ul id="taskList"></ul>
+    </div>
+    <button id="bottn" onclick="clearAll()"
+    style="margin-top: 16px; margin-bottom: 0px; background-color: rgb(52, 190, 52);">Clear All</button>
+    <button onclick="showbtn()" id="btn">Hide Tasks</button>
+    <center> 
+    <h2>Task Summary</h2>
+    <table>
+        
+            <tr>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+        
+        <tbody id="taskTable"></tbody>
+    </table>
+    
+    <footer>
+        <p style="margin-top:10px ;"> &copy; 2025 To-Do List App. All Rights Reserved.</p>
+    </footer>
+    <script>
+
+        let tasks = [];
+
+        function formatDate(date) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' 
+
+            }
+            return new Date(date).toLocaleDateString(undefined, options);
+        }       
+        function Tasks() {
+            const taskList = document.getElementById("taskList");
+            const taskTable = document.getElementById("taskTable");
+            taskList.innerHTML = "";
+            taskTable.innerHTML = "";
+            tasks.forEach((task, index) => {
+                let li = document.createElement("li");
+                li.className = `task-item ${task.completed ? 'completed' : ''}`;
+                li.innerHTML = ` <span>${task.text} </span>
+      <button class="complete-btn" onclick="toggleComplete(${index})"> Complete </button>
+      <button class="delete-btn" onclick="deleteTask(${index})"> Remove </button> `;
+                taskList.appendChild(li);
+
+                let tr = document.createElement("tr");
+                tr.innerHTML = `<td>${task.text}</td><td>${task.completed ? 'Completed' : 'Pending'}</td><td>${formatDate(task.date)}</td>`;
+                taskTable.appendChild(tr);
+            });
+            localStorage.setItem("tasks", JSON.stringify(tasks));
+        }
+
+        function showbtn() {
+            $("#taskList").slideToggle(1000);
+            if ($("#btn").text() === "Show Tasks") {
+                $("#btn").text("Hide Tasks");
+            } else {
+                $("#btn").text("Show Tasks");
+            }
+        }
+
+        function addTask() {
+            let taskInput = document.getElementById("taskInput");
+            let taskDate = document.getElementById("taskDate").value; 
+            let taskText = taskInput.value.trim();
+
+            if (!taskText) {
+                alert("Please enter a task before adding.");
+                return;
+            }
+            if (!taskDate) {
+                taskDate = new Date().toLocaleDateString(); 
+            }
+
+            tasks.push({ text: taskText, completed: false, date: taskDate });
+            taskInput.value = "";
+            document.getElementById("taskDate").value = "";
+             Tasks();
+        }
+
+
+        function toggleComplete(index) {
+            tasks[index].completed = !tasks[index].completed;
+            Tasks();
+        }
+
+
+        function deleteTask(index) {
+            if (confirm("Are you sure you want to remove your task?")) {
+                tasks.splice(index, 1);
+                Tasks();
+            }
+        }
+        function clearAll() {
+            if (confirm("Are You Sure You Want To Delete All Tasks?")) {
+                tasks = [];
+                Tasks();
+            }
+        }
+
+      
+         document.addEventListener("DOMContentLoaded", Tasks);
+    </script>
+</body>
+
+</html>

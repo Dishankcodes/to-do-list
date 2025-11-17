@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <title>Rate Us</title>
+    <style>
+        body {
+            background-color: #F7F7F7;
+            color: #2d4a29;
+        }
+
+        #q {
+            background-color: #C6E2B5;
+            color: #2d4a29;
+        }
+
+        .c {
+            background-color: #FFFFFF;
+            margin-top: 20px;
+        }
+
+        nav a {
+            font-weight: bold;
+            text-align: center;
+            background-color: #C6E2B5;
+            border: 8px solid #C6E2B5;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #2d4a29;
+
+            margin: 10px;
+        }
+
+        #i {
+            /*  background-color: #4CAF50; */
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .b {
+            color: #2d4a29;
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            margin: none;
+            background-color: #4CAF50;
+
+            width: 100%;
+        }
+
+        .nav-link:hover {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        #a {
+            display: flex;
+            padding: 20px;
+            gap: 500px;
+            /*  background-color: #C6E2B5; */
+            margin-top: 10px;
+            background-color: #4CAF50;
+        }
+
+        #m {
+            background-color: #C6E2B5;
+            margin: none;
+            margin-bottom: 20px;
+            /*  padding-left: 605px;
+        padding-right: 605px; */
+
+        }
+
+        #t {
+            text-align: right;
+            /*   height: 30px; */
+            padding: 10px 13px 10px 13px;
+            border-radius: 20px;
+            border: none;
+            cursor: pointer;
+            color: white;
+            margin-top: 5px;
+            background: rgb(40, 167, 69);
+            color: white;
+            cursor: pointer;
+        }
+
+        .rate,
+        .about,
+        .contact,
+        .us {
+            background: white;
+            color: #2d4a29;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+            border: 1px solid #4CAF50;
+        }
+        .us{
+            margin-bottom: 20px;
+        }
+        h2 {
+            color: #2d4a29;
+        }
+
+        textarea {
+            width: 97%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background: rgb(52, 190, 52);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .rating {
+            font-size: 24px;
+            cursor: pointer;
+            display: flex;
+            margin-bottom: 20px;
+            justify-content: center;
+        }
+
+        .rating span {
+            padding: 5px;
+            transition: transform 0.2s;
+        }
+
+        .rating span:hover {
+            transform: scale(1.5);
+            color: gold;
+        }
+
+        footer {
+            background-color: #4CAF50;
+        font-weight: bold;
+        text-align: center;
+        padding: 0.5%;
+        color: white;
+        }
+
+        marquee {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d4a29;
+            margin-bottom: 20px;
+        }
+        .stars {
+    i {
+      cursor: pointer;
+    }
+}
+    </style>
+</head>
+
+<body style="background-image: url(backg.png); background-repeat: no-repeat; background-color: white; background-size: cover;"> 
+    <header>
+        <div id="i">
+            <div class="b">
+                <div style="display: flex; justify-content: space-between; align-items: center; ">
+                <h1 style="padding: 5px;"> GetItDone </h1>
+                <button onclick="location.href='homepage.html'" style="background-color: #4CAF50; color: white; border: 2px solid #4CAF50; border-radius: 5px; padding: 8px 15px; cursor: pointer; margin-right: 20px;">Login</button>
+</div>
+            </div>
+            <div class="a" style="width: 100%; text-align: center;">
+                <div id="m">
+                    <nav>
+
+                        <a href="homepage.html" class="nav-link" style="margin-left: none;">Home</a>
+                        <a href="task.html" class="nav-link" style="margin-left: 10px;">Tasks</a>
+                        <a href="rateus.html" class="nav-link" style="margin-left: 10px;">FeedBack</a>
+
+                    </nav>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <marquee>Rate us 5 stars to support our app!</marquee>
+    <div class="rate">
+        <h2>Rate Our To-Do List App</h2>
+        <p>We'd love to hear your feedback!</p>
+        <div class="rating" ondblclick="showWarning()">
+            
+             <i class="fa-regular fa-star" data-index="0"></i>
+            <i class="fa-regular fa-star" data-index="1"></i>
+            <i class="fa-regular fa-star" data-index="2"></i>
+            <i class="fa-regular fa-star" data-index="3"></i>
+            <i class="fa-regular fa-star" data-index="4"></i>
+        </div>
+        <textarea placeholder="Write your review here..." id="txta"></textarea>
+        <p id="charCount">0/500</p>
+        <center>
+            <button onclick="submitReview()">Submit</button>
+            <p id="message"></p>
+        </center>
+    </div>
+
+    <div class="about" style="margin-top: 20px;">
+        <h2>About Tasks</h2>
+        <hr>
+        <p>You can add, complete, and delete tasks in our app. Your tasks will be saved locally, ensuring easy access
+            and management.</p>
+    </div>
+
+    <div class="contact" style="margin-top: 20px;">
+        <h2>Contact Us</h2>
+        <hr>
+        <p>Email : support@getitdone.com</p>
+
+        <p>Phone: +123-456-7890</p>
+        <p>Address: 123 Productivity Lane, Task City</p>
+    </div>
+
+    <div class="us" style="margin-top: 20px;">
+        <h2>About Us</h2>
+        <hr>
+        <marquee behavior="scroll" direction="left">
+            GetItDone - Making task management simple and efficient!
+        </marquee>
+        <p>GetItDone is a simple and efficient To-Do List App designed to help you stay organized and productive. Our
+            mission is to make task management easy and accessible for everyone.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 To-Do List App. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+ let Rating = -1;
+document.addEventListener("DOMContentLoaded", () => {
+            const stars = document.querySelectorAll(".rating i");
+           
+
+            stars.forEach((star, index) => {
+                star.addEventListener("mouseover", () => highlightStars(index));
+                star.addEventListener("mouseout", resetStars);
+                star.addEventListener("click", () => selectStars(index));
+            });
+
+            function highlightStars(index) {
+                stars.forEach((star, i) => {
+                    star.classList.toggle("fa-solid", i <= index);
+                    star.classList.toggle("fa-regular", i > index);
+                    star.style.color = i <= index ? "gold" : "gray";
+                });
+            }
+
+            function resetStars() {
+                stars.forEach((star, i) => {
+                    if (i > Rating) {
+                        star.classList.remove("fa-solid");
+                        star.classList.add("fa-regular");
+                        star.style.color = "gray";
+                    }
+                });
+            }
+
+            function selectStars(index) {
+                Rating = index;
+                stars.forEach((star, i) => {
+                    star.classList.toggle("fa-solid", i <= index);
+                    star.classList.toggle("fa-regular", i > index);
+                    star.style.color = i <= index ? "gold" : "gray";
+                    star.classList.toggle("active", i <= index);
+                });
+            }
+        
+        });
+
+        $(document).ready(function () { 
+             $("button").click(function () {
+                let feedback = $("#txta").val().trim();
+                if (feedback === "") {
+                    $("#message").text("Please enter your feedback before submitting.").css("color", "red");
+                } 
+            });
+
+            $("#txta").on("input", function () {
+                let length = $(this).val().length;
+                $("#charCount").text(length + "/500");
+            });
+        });
+
+        function submitReview() {
+        const feedback = document.getElementById("txta").value.trim();
+                if (Rating === -1) {
+                    alert("Please select a star before submitting feedback.");
+                    return;
+                }
+                 if (feedback === "") {
+                             alert("Please enter your feedback before submitting.");
+                             return;
+        }   
+        
+            alert("Thank you for your " + (Rating +1) + " star feedback!");
+            window.location.href= "homepage.html"
+        
+    }
+    function showWarning() { 
+        alert("5 stars are necessary!");
+    }
+
+
+    </script>
+</body>
+</html>
